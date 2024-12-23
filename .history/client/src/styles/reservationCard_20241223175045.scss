@@ -1,0 +1,136 @@
+.reservation-card {
+    background-color: var(--red);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .details {
+        flex: 1;
+
+        .res-name {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+
+            h1 {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: white;
+                margin: 0;
+            }
+
+            button {
+                background-color: white;
+                color: var(--red);
+                border: none;
+                padding: 8px 16px;
+                border-radius: 6px;
+                font-size: 0.9rem;
+                cursor: pointer;
+                transition: all 0.3s;
+
+                &:hover {
+                    transform: translateY(-1px);
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+
+        .res-details {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 8px 16px;
+            align-items: center;
+
+            p {
+                color: rgba(255, 255, 255, 0.9);
+                font-weight: 500;
+                margin: 0;
+            }
+
+            span {
+                color: white;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .admin-actions {
+        display: flex;
+        gap: 16px;
+        padding: 4px;
+
+        .action-icon {
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: white;
+
+            &:hover {
+                transform: translateY(-1px);
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+
+            &[title="Modify"],
+            &[title="Swap Booking"],
+            &[title="Delete"] {
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+    }
+
+    .icon {
+        padding: 8px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        color: white;
+
+        svg {
+            font-size: 1.2rem;
+        }
+
+        &:hover {
+            transform: translateY(-1px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .reservation-card {
+        padding: 15px;
+        
+        .details {
+            .res-name {
+                h1 {
+                    font-size: 1.2rem;
+                }
+            }
+            
+            .res-details {
+                gap: 6px 12px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .admin-actions {
+            gap: 12px;
+        }
+    }
+}

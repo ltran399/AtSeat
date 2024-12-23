@@ -1,0 +1,53 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+
+    .current-booking {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+    }
+
+    .available-slots {
+        .slots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+
+            .slot {
+                padding: 0.5rem;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                cursor: pointer;
+                text-align: center;
+
+                &:hover {
+                    background-color: #f8f9fa;
+                }
+
+                &.selected {
+                    background-color: #007bff;
+                    color: white;
+                }
+            }
+        }
+    }
+}
